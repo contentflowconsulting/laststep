@@ -43,46 +43,35 @@
     }
     
     .paso-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
-      color: #000;
+      display: inline-block;
+      color: var(--brand-1);
       font-weight: 800;
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
     
     .btn-cta {
       position: relative;
-      background: transparent;
+      background: linear-gradient(135deg, #1e3a8a, #4338ca);
       color: white !important;
       font-size: 1.25rem;
       font-weight: 700;
       padding: 1rem 2.5rem;
-      border: 2px solid transparent;
-      border-radius: 9999px;
-      background-image: linear-gradient(#000, #000), linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
-      background-origin: border-box;
-      background-clip: padding-box, border-box;
-      background-size: 100%, 200% 100%;
-      animation: borderFlowBtn 3s linear infinite;
+      border: 2px solid rgba(99, 102, 241, 0.5);
+      border-radius: 8px;
       transition: all 0.3s ease;
       text-decoration: none;
       display: inline-block;
       cursor: pointer;
     }
     
-    @keyframes borderFlowBtn {
-      0% { background-position: 0% 0%, 0% 0%; }
-      100% { background-position: 0% 0%, 200% 0%; }
-    }
-    
     .btn-cta:hover {
-      box-shadow: 0 0 50px rgba(0,212,255,0.8), 0 0 100px rgba(0,212,255,0.4);
+      background: linear-gradient(135deg, #1e40af, #4f46e5);
+      border-color: rgba(99, 102, 241, 0.8);
+      box-shadow: 0 0 30px rgba(99, 102, 241, 0.5);
+      transform: translateY(-2px);
     }
     
     .video-placeholder {
@@ -124,8 +113,8 @@
     }
     
     .warning-box {
-      background: rgba(255,200,0,0.1);
-      border: 1px solid rgba(255,200,0,0.3);
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.4), rgba(67, 56, 202, 0.3));
+      border: 1px solid rgba(99, 102, 241, 0.5);
       border-radius: 12px;
       padding: 1rem 1.5rem;
       margin: 1.5rem 0;
@@ -164,20 +153,9 @@
         <img src="https://i.ibb.co/your-logo-url.png" alt="Content Flow Logo" class="mx-auto w-32 md:w-40 drop-shadow-lg" />
       </div>
 
-      <!-- Badge superior -->
-      <div class="text-center mb-6">
-        <div class="badge-top">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          Llamada Confirmada
-        </div>
-      </div>
-
       <!-- Título principal -->
-      <h1 class="text-3xl md:text-5xl font-black text-center mb-4 leading-tight" style="font-family:'Poppins',sans-serif">
-        ¡Un <span class="gradient-text">último paso</span><br/>antes de tu llamada!
+      <h1 class="text-3xl md:text-5xl font-black text-center mb-4 leading-tight text-white" style="font-family:'Poppins',sans-serif">
+        ¡Un último paso<br/>antes de tu llamada!
       </h1>
 
       <!-- Subtítulo -->
@@ -214,14 +192,14 @@
         
         <!-- Paso 1 -->
         <div class="paso-card">
-          <div class="paso-number">1</div>
+          <div class="paso-number">PASO #1:</div>
           <h3 class="text-xl font-bold mb-2">Mira el video completo<br/>con atención.</h3>
           <p class="text-slate-400 text-sm">(De verdad, es importante).</p>
         </div>
 
         <!-- Paso 2 -->
         <div class="paso-card">
-          <div class="paso-number">2</div>
+          <div class="paso-number">PASO #2:</div>
           <h3 class="text-xl font-bold mb-2">Responde las preguntas.</h3>
           <p class="text-slate-400 text-sm">Toma menos de un minuto.</p>
         </div>
