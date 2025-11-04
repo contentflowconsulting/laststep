@@ -141,6 +141,86 @@
         height: 60px;
       }
     }
+    
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.9);
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      background-color: #000;
+      margin: 2rem;
+      border: 2px solid rgba(99, 102, 241, 0.5);
+      border-radius: 12px;
+      width: 90%;
+      max-width: 1200px;
+      height: 85vh;
+      position: relative;
+      animation: slideUp 0.3s ease;
+    }
+    
+    .close-modal {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      color: #fff;
+      font-size: 32px;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 1001;
+      background: rgba(99, 102, 241, 0.2);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+      transition: all 0.3s ease;
+    }
+    
+    .close-modal:hover {
+      background: rgba(99, 102, 241, 0.4);
+      transform: rotate(90deg);
+    }
+    
+    .modal iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body class="antialiased">
@@ -208,9 +288,9 @@
 
       <!-- CTA Final -->
       <div class="text-center">
-        <a href="https://contentflowconsulting.github.io/formsc/" target="_blank" rel="noopener noreferrer" class="btn-cta">
+        <button onclick="openModal()" class="btn-cta">
           Responde las preguntas aquí
-        </a>
+        </button>
         <p class="text-slate-500 text-xs mt-4">
           ⚠️ Si no completas este paso, tu llamada será cancelada automáticamente
         </p>
@@ -219,6 +299,14 @@
     </div>
   </section>
 
+  <!-- Modal para el formulario -->
+  <div id="formularioModal" class="modal">
+    <div class="modal-content">
+      <span class="close-modal" onclick="closeModal()">&times;</span>
+      <iframe src="https://contentflowconsulting.github.io/formsc/" title="Formulario de Confirmación"></iframe>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="text-center py-8 border-t border-slate-800">
     <p class="text-slate-600 text-sm">© <span id="year"></span> Content Flow. Todos los derechos reservados.</p>
@@ -226,6 +314,31 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    function openModal() {
+      document.getElementById('formularioModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      document.getElementById('formularioModal').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Cerrar modal al hacer clic fuera del contenido
+    window.onclick = function(event) {
+      const modal = document.getElementById('formularioModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+    
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
   </script>
 
 </body>
