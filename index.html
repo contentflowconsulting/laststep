@@ -33,8 +33,16 @@
       background: rgba(20,20,20,0.6);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 16px;
-      padding: 2rem;
+      padding: 1.5rem;
       transition: all 0.3s ease;
+    }
+    
+    .paso-card h3 {
+      font-size: 1.1rem;
+    }
+    
+    .paso-card p {
+      font-size: 0.85rem;
     }
     
     .paso-card:hover {
@@ -58,7 +66,7 @@
       color: white !important;
       font-size: 1.25rem;
       font-weight: 700;
-      padding: 1rem 2.5rem;
+      padding: 1rem 1.75rem;
       border: 2px solid rgba(99, 102, 241, 0.5);
       border-radius: 8px;
       transition: all 0.3s ease;
@@ -133,12 +141,28 @@
       }
       
       .paso-card {
-        padding: 1.5rem;
+        padding: 1.25rem;
+      }
+      
+      .paso-card h3 {
+        font-size: 0.95rem;
+      }
+      
+      .paso-card p {
+        font-size: 0.8rem;
       }
       
       .play-icon {
         width: 60px;
         height: 60px;
+      }
+      
+      .subtitle-video {
+        font-size: 0.85rem !important;
+      }
+      
+      .warning-text {
+        font-size: 0.75rem !important;
       }
     }
     
@@ -239,22 +263,22 @@
       </h1>
 
       <!-- Subtítulo -->
-      <p class="text-slate-300 text-center text-lg md:text-xl mb-3 max-w-3xl mx-auto leading-relaxed px-4">
+      <p class="subtitle-video text-slate-300 text-center mb-3 max-w-3xl mx-auto leading-relaxed px-4" style="font-size: 1.0625rem;">
         Mira este video completo (dura 5 minutos) para que no se cancele tu llamada.
       </p>
 
       <!-- Advertencia -->
       <div class="warning-box text-center max-w-xl mx-auto mb-8">
-        <p class="text-slate-200 text-sm md:text-base font-semibold mb-4">
+        <p class="warning-text text-slate-200 font-semibold mb-4" style="font-size: 0.875rem;">
           Después de verlo, responde un par de preguntas que <strong>Migue revisará antes de tu llamada</strong>
         </p>
-        <p class="text-slate-200 text-sm md:text-base font-semibold">
+        <p class="warning-text text-slate-200 font-semibold" style="font-size: 0.875rem;">
           Migue revisará tu caso y te enviará un correo con observaciones específicas y la confirmación de tu llamada.
         </p>
       </div>
 
       <!-- Video Placeholder -->
-      <div class="mb-12 shadow-glow">
+      <div class="mb-12 shadow-glow" style="transform: scale(1.2);">
         <div class="video-placeholder">
           <div class="video-placeholder-content">
             <div class="play-icon">
